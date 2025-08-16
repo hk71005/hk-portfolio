@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G. Harikrishnan Portfolio</title>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>G. HARIKRISHNAN</h1>
+    <p class="typewriter">Web Developer and Designer</p>
+  </header>
+
+  <section id="about">
+  <div class="about-text">
+    <h2>About Me</h2>
+    <p>I’m G. Harikrishnan, an engineering student at MNM Jain Engineering College with a passion for web development, design, and emerging technologies. I approach every project with sincerity, creativity, and a drive to learn. My internship at Network Geek gave me hands-on experience in building responsive websites and working with real-world tech stacks. I’m committed to continuous growth and delivering visually engaging digital experiences.</p>
+  </div>
+  <img src="HK IMAGE-Photoroom.jpg" alt="G. Harikrishnan" />
+</section>
+
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span>
+      <span>Networking</span><span>Excel (IBM)</span><span>Generative AI</span><span>Deep Learning</span>
+    </div>
+  </section>
+
+  <section id="projects">
+  <h2>Projects</h2>
+  <div class="project-gallery">
+    <div class="project-card">
+      <h3>Spiderman Mask</h3>
+      <a href="https://codepen.io/lczkyufm-the-animator/full/MYwzNGQ" target="_blank">
+        <img src="spiderman-mask.jpg" alt="Spiderman Mask Project" />
+      </a>
+    </div>
+    <div class="project-card">
+      <h3>Spiderman Portfolio</h3>
+      <a href="https://codepen.io/lczkyufm-the-animator/full/azOQeya" target="_blank">
+        <img src="spiderman-portfolio.jpg" alt="Spiderman Portfolio Project" />
+      </a>
+    </div>
+  </div>
+</section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <a href="HK CV.pdf" download>Download Resume (PDF)</a>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:gharikrishnan710@gmail.com">gharikrishnan710@gmail.com</a></p>
+    <p>Phone: 8610350530</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/harikrishnan-g-48ba86359" target="_blank">Visit Profile</a></p>
+    <p>© 2025 HK. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll Reveal
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+      section.style.opacity = 0;
+      section.style.transform = 'translateY(20px)';
+    });
+
+    window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          section.style.opacity = 1;
+          section.style.transform = 'translateY(0)';
+        }
+      });
+    });
+
+    // Active Nav Highlight
+    const navLinks = document.querySelectorAll('nav ul li a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 60) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
